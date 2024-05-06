@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-black w-screen h-screen overflow-hidden flex justify-center items-center;
+}
+
+#root {
+  @apply w-full max-w-[932px] max-h-[430px] bg-black aspect-[932/430];
+}
