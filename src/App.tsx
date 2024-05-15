@@ -1,10 +1,14 @@
-import { BattleField } from './3D';
+import { BrowserRouter } from 'react-router-dom';
+import RouteContainer from './routes';
+import { AuthContextProvider } from '@contexts/useAuthContext';
 
 function App() {
   return (
-    <div className='w-full h-full'>
-      <BattleField />
-    </div>
+    <AuthContextProvider>
+      <BrowserRouter>
+        <RouteContainer />
+      </BrowserRouter>
+    </AuthContextProvider>
   );
 }
 
