@@ -17,13 +17,15 @@ export default function RoomList() {
 
   // user create room
   useEffect(() => {
+    console.log(socket?.current?.id);
+
     socket?.current?.on('user-create-room-success', async ({ rooms }: { rooms: IRoom[] }) => {
-      console.log(rooms, '132');
+      console.log(rooms);
       setRooms(rooms);
     });
 
     return () => {
-      socket?.current?.off();
+      socket?.current?.off('user-create-room-success');
     };
   }, []);
 
@@ -36,6 +38,8 @@ export default function RoomList() {
       });
     }
   }, []);
+
+  console.log(socket?.current);
 
   return (
     <div>
@@ -59,7 +63,6 @@ export default function RoomList() {
               name: roomName,
               users: [user],
             } as IRoom);
-            socket?.current?.off();
           }}
         >
           Create Room
