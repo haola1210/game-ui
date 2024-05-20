@@ -22,7 +22,7 @@ const RouteContainer = () => {
     },
     {
       element: <Room />,
-      path: ROUTES.ROOM,
+      path: `${ROUTES.ROOM}/:id`,
     },
   ]);
 };
