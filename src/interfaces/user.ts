@@ -1,10 +1,10 @@
-export interface IUser {
+export interface IPlayer {
   name: string;
   id: string;
 }
 
 export interface IRoom {
   name: string;
-  id: string;
-  users: IUser[];
+  id: number;
+  players: IPlayer[];
 }

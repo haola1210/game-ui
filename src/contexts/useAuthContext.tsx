@@ -1,18 +1,18 @@
-import { IUser } from '@interfaces/user';
+import { IPlayer } from '@interfaces/user';
 import { createContext, ReactNode, useContext, useState } from 'react';
 
 interface IAuthContext {
-  user?: IUser;
-  login?: (user: IUser) => void;
+  user?: IPlayer;
+  login?: (user: IPlayer) => void;
   logout?: () => void;
 }
 
 const AuthContext = createContext<IAuthContext>({});
 
 export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<IUser | undefined>(undefined);
+  const [user, setUser] = useState<IPlayer | undefined>(undefined);
 
-  const login = (user: IUser) => {
+  const login = (user: IPlayer) => {
     setUser(user);
   };
 
