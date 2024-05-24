@@ -1,0 +1,6 @@
+.login-container {
+    @apply w-full h-screen flex items-center justify-center;
+    .login-box {
+        @apply w-1/2 h-1/2 bg-slate-100 rounded-3xl flex items-center justify-center flex-col p-10;
+    }
+}

@@ -15,6 +15,7 @@ interface RowProps {
   x: number;
   spriteDataset: any;
 }
+
 const Row = ({ x, spriteDataset }: RowProps) => (
   <group dispose={null}>
     <SpriteAnimator
@@ -158,7 +159,7 @@ const AssetsConatiner = () => {
 
 export default function BattleField() {
   return (
-    <>
+    <div className='bg-black w-screen h-screen overflow-hidden flex justify-center items-center;'>
       <Canvas
         orthographic
         gl={{ alpha: true, antialias: true }}
@@ -184,6 +185,6 @@ export default function BattleField() {
         </Suspense>
       </Canvas>
       <Loader />
-    </>
+    </div>
   );
 }
