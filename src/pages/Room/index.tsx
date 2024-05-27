@@ -3,7 +3,7 @@ import RoomItem from '@components/ListItem';
 import { ROUTES } from '@constants/routes';
 import { useSocketContext } from '@contexts/SocketContext';
 import { useAuthContext } from '@contexts/useAuthContext';
-import { IRoom } from '@interfaces/user';
+import { IRoom } from '@interfaces/player';
 import { getRoomById } from '@services/rooms';
 import { iIFE } from '@utils/index';
 import { useEffect, useState } from 'react';
@@ -19,7 +19,6 @@ export default function Room() {
   useEffect(() => {
     iIFE(async () => {
       const data = await getRoomById(params.id);
-      console.log(data);
       setRoomInfo(data);
     });
   }, [params]);
@@ -37,13 +36,13 @@ export default function Room() {
 
   useEffect(() => {
     socket?.current?.on('user-start-game-success', () => {
-      navigate(ROUTES.HOME_PAGE);
+      navigate(`${ROUTES.BATTLE}/${roomInfo?.players[0]?.id}/${roomInfo?.players[1]?.id}`);
     });
 
     return () => {
       socket?.current?.off('user-start-game-success');
     };
-  }, []);
+  }, [roomInfo]);
 
   return (
     <div className='text-white'>

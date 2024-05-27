@@ -1,4 +1,4 @@
-import { IRoom } from '@interfaces/user';
+import { IRoom } from '@interfaces/player';
 import { axiosInstance } from './axios';
 
 const roomUrl = '/rooms';

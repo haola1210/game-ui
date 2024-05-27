@@ -3,4 +3,5 @@ export enum ROUTES {
   LOGIN = '/login',
   ROOM_LIST = '/room-list',
   ROOM = '/room',
+  BATTLE = '/battle',
 }

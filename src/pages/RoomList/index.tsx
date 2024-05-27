@@ -6,7 +6,7 @@ import { useSocketContext } from '@contexts/SocketContext';
 import { useEffect, useState } from 'react';
 import Input from '@components/Input';
 import { useAuthContext } from '@contexts/useAuthContext';
-import { IRoom } from '@interfaces/user';
+import { IRoom } from '@interfaces/player';
 import { iIFE } from '@utils/index';
 import { getAllRoom } from '@services/rooms';
 

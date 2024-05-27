@@ -1,4 +1,4 @@
-import { IPlayer } from '@interfaces/user';
+import { IPlayer } from '@interfaces/player';
 import { axiosInstance } from './axios';
 
 const playerUrl = `players`;
